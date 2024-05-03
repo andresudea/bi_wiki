@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Documentación procesos BI</title>
+    <link rel="icon" href="assets/e_icon.ico"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="Documentación BI"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="//unpkg.com/docsify-gifcontrol/dist/docsify-gifcontrol.css">
+
+    <link
+            rel="stylesheet"
+            href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css"
+            title="docsify-darklight-theme"
+            type="text/css"
+    />
+
+    <script src="//cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js"></script>
+
+    <!-- Plugin CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar@2.4.0/build/vanilla-calendar.min.css"
+          rel="stylesheet">
+
+    <!-- Plugin JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@uvarov.frontend/vanilla-calendar@2.4.0/build/vanilla-calendar.min.js"
+            defer></script>
+
+
+</head>
+<body id="theBody">
+<div id="app"></div>
+
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"
+></script>
+<script>
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = window.location.search.substring(1),
+            sURLVariables = sPageURL.split("&"),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split("=");
+
+            if (sParameterName[0] === sParam) {
+                return typeof sParameterName[1] === undefined
+                    ? true
+                    : decodeURIComponent(sParameterName[1]);
+            }
+        }
+        return false;
+    };
+</script>
+
+
+<script>
+    mermaid.initialize({startOnLoad: false});
+    var token = getUrlParameter("tiger_t");
+    if (token == "f8a37a6c377a48659e9bfd92cc6bfdc9") {
+
+        $(document).ready(function () {
+            $('.app-name-link').each(function () {
+                var currentUrl = $(this).attr("href");
+                $(this).attr("href", currentUrl + "?tiger_t=" + token);
+            });
+        });
+
+        window.$docsify = {
+            name: '<img src="./assets/logo_emtelco.png" data-origin="./assets/logo_emtelco.png" class="sidebar-logo"><b>Documentación BI</b>',
+            repo: 'https://bitbucket.org/aduquram/aduquram.bitbucket.io',
+            formatUpdated: '{MM}/{DD} {HH}:{mm}',
+            loadNavbar: true,
+            loadSidebar: true,
+            coverpage: true,
+            notFoundPage: true,
+            auto2top: true,
+            autoHeader: false,
+            subMaxLevel: 3,
+            maxLevel: 4,
+            nativeEmoji: false,
+            requestHeaders: {
+                'x-token': 'xxx',
+            },
+            pagination: {
+                crossChapter: true,
+                crossChapterText: true,
+            },
+            darklightTheme: {
+                siteFont: 'PT Sans',
+                defaultTheme: 'light | dark',
+                codeFontFamily: 'Roboto Mono, Monaco, courier, monospace',
+                bodyFontSize: '17px',
+                light: {
+                    accent: '#00b1e5',
+                    toogleBackground: '#091a28',
+                    background: '#ffffff',
+                    textColor: '#34495e',
+                    cc_logo: 'url("assets/logo_emtelco.png")',
+                    codeTextColor: '#525252',
+                    codeBackgroundColor: '#f8f8f8',
+                    borderColor: 'rgba(0, 0, 0, 0.07)',
+                    blockQuoteColor: '#858585',
+                    highlightColor: '#275dd2',
+                    sidebarSublink: '#5e5e5e',
+                    sidebarSublinkLi: '#2d2d2d',
+                    codeTypeColor: '#091a28',
+                    navBackgroundNColor: '#F7F7F7',
+                    sideBarBackgroundNColor: '#F1F1F1',
+                    sideBarHoverBackgroundNColor: '#E1E1E1',
+                    sideBarHoverTextColor: '#777777',
+                    calendarTitleColor: '#30287c',
+                    coverBackground:
+                        'linear-gradient(to left bottom, hsl(0deg 0% 100%) 0%,#00b1e5 100%)',
+                    toogleImage:
+                        'url(https://cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/moon.svg)'
+                },
+                dark: {
+                    accent: '#00b1e5',
+                    toogleBackground: '#ffffff',
+                    background: '#091a28',
+                    textColor: '#b4b4b4',
+                    codeTextColor: '#ffffff',
+                    codeBackgroundColor: '#0e2233',
+                    borderColor: '#0d2538',
+                    blockQuoteColor: '#858585',
+                    highlightColor: '#658ad2',
+                    sidebarSublink: '#b4b4b4',
+                    sidebarSublinkLi: '#e8e8e8',
+                    cc_logo: 'url("assets/logo_emtelco_dark.png")',
+                    codeTypeColor: '#ffffff',
+                    navBackgroundNColor: '#0e2233',
+                    sideBarBackgroundNColor: '#12283d',
+                    sideBarHoverBackgroundNColor: '#19334b',
+                    sideBarHoverTextColor: '#ffffff',
+                    calendarTitleColor: '#ffffff',
+                    coverBackground:
+                        'linear-gradient(to left bottom, hsl(245.71deg 51.22% 32.16%) 0%,hsl(207.1deg 63.27% 9.61%) 100%)',
+                    toogleImage:
+                        'url(https://cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/sun.svg)'
+                }
+            },
+
+            search: {
+                maxAge: 86400000, // Expiration time, the default one day
+                paths: 'auto',
+                placeholder: {
+                    '/': 'Buscar'
+                },
+                noData: {
+                    '/': 'Sin Resultados'
+                },
+                depth: 4,
+                hideOtherSidebarContent: false,
+            },
+            markdown: {
+                renderer: {
+                    code: function (code, lang) {
+
+                        function unique_id_generator() {
+                            function rand_gen() {
+                                return Math.floor((Math.random() + 1) * 65536).toString(16).substring(1);
+                            }
+
+                            return rand_gen() + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + '-' + rand_gen() + rand_gen() + rand_gen();
+                        }
+
+                        var pdf_renderer = function (code, lang, verify) {
+
+                            if (lang && !lang.localeCompare('pdf', 'en', {sensitivity: 'base'})) {
+                                if (verify) {
+                                    return true;
+                                } else {
+                                    var divId = "markdown_code_pdf_container_" + unique_id_generator().toString();
+                                    var container_list = new Array();
+                                    if (localStorage.getItem('pdf_container_list')) {
+                                        container_list = JSON.parse(localStorage.getItem('pdf_container_list'));
+                                    }
+                                    container_list.push({"pdf_location": code, "div_id": divId});
+                                    localStorage.setItem('pdf_container_list', JSON.stringify(container_list));
+                                    return (
+                                        '<div style="margin-top:' + PDF_MARGIN_TOP + '; margin-bottom:' + PDF_MARGIN_BOTTOM + ';" id="' + divId + '">'
+                                        + '<a href="' + code + '"> Link </a> to ' + code +
+                                        '</div>'
+                                    );
+                                }
+                            }
+                            return false;
+                        }
+                        if (pdf_renderer(code, lang, true)) {
+                            return pdf_renderer(code, lang, false);
+                        }
+                        if (lang === "mermaid") {
+                            return (
+                                '<div class="mermaid">' + mermaid.render('mermaid-svg-' + unique_id_generator().toString(), code) + "</div>"
+                            );
+                        }
+                        return this.origin.code.apply(this, arguments);
+                    }
+                }
+            },
+            copyCode: {
+                buttonText: 'Copiar',
+                errorText: 'Error',
+                successText: 'Copiado'
+            },
+            calendarConfig: {
+                lang: 'es-EN',
+                selection: {
+                    day: false,
+                    month: false,
+                    year: false,
+                },
+                visibility: {
+                    today: false,
+                }
+            },
+            tabs: {
+                persist: true,      // default
+                sync: true,      // default
+                theme: 'classic', // default
+                tabComments: true,      // default
+                tabHeadings: true       // default
+            },
+            progress: {
+                position: "top",
+                color: "var(--theme-color,#00b1e5)",
+                height: "3px",
+            },
+            timeUpdater: {
+                text: "<div style='color:gray;font-size:small'>Última actualización:&emsp;{docsify-updated}</div>",
+                formatUpdated: "{YYYY}/{MM}/{DD}",
+                whereToPlace: "top",  // "top" or "bottom", default to "bottom"
+            },
+        };
+    } else {
+        $("#theBody").html(`<div id="unauth">Unauthorized</div>`);
+        $("#theBody").removeAttr("data-page");
+    }
+
+</script>
+
+
+<!-- docsify (latest v4.x.x)-->
+<script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+
+<!--plugins-->
+<script src="//unpkg.com/docsify-gifcontrol/dist/docsify-gifcontrol.js"></script>
+<script src="https://unpkg.com/@h-hg/docsify-image-caption/dist/docsify-image-caption.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
+<script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script>
+
+<!-- Adding json syntax highlighting -->
+<script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-docker.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-groovy.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-sql.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-plsql.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-python.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-regex.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-http.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/external-script.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script>
+<script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<script src="https://unpkg.com/docsify-copy-code@2"></script>
+<script
+        src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"
+        type="text/javascript"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
+
+<style>
+    :root {
+        --docsifytabs-border-color: #ededed;
+        --docsifytabs-tab-highlight-color: #00b1e5;
+    }
+
+    .tab-badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(35%, -45%);
+        padding: 0.25em 0.35em;
+        border-radius: 3px;
+        background: #00b1e5;
+        color: white;
+        font-family: sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+    }
+
+    .identy {
+        display: none;
+    }
+
+
+</style>
+
+<style>
+    body {
+        font-family: Source Sans Pro, Helvetica Neue, Arial, sans-serif !important;
+        font-size: 15px !important;
+    }
+
+    .sidebar-nav a {
+        font-size: 14px;
+    }
+
+    .sidebar-nav li p {
+        font-size: 15px !important
+    }
+
+    .markdown-section {
+        margin: 0 auto;
+        max-width: 80%;
+        padding: 30px 15px 40px;
+    }
+
+    #docsify-darklight-theme {
+        right: -5px;
+        top: 45px;
+    }
+
+    .medium-zoom-overlay {
+        background: transparent !important;
+        background: rgb(0 0 0 / 50%) !important;
+        z-index: 15;
+    }
+
+    .medium-zoom-image {
+        z-index: 15;
+    }
+
+    .sidebar li {
+        color: var(--sidebarSublinkLi);
+        font-size: 14px;
+        font-weight: 400;
+        overflow: hidden;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .sidebar li > ul {
+        color: var(--sidebarSublink);
+        font-size: 14px;
+        font-weight: 400;
+        overflow: hidden;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .search input:focus {
+        box-shadow: 0 0 5px var(--theme-color, #00b1e5);
+        border: 1px solid var(--theme-color, #00b1e5);
+    }
+
+    .search .input-wrap {
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .search input {
+        border: 1px solid rgb(0 0 0 / 33%) !important;
+        background-color: var(--background) !important;
+        margin: 0 auto;
+        color: var(--textColor);
+        width: 100% !important;
+        border-radius: 10px;
+        font-size: large;
+        text-indent: 15px;
+    }
+
+
+    /* Quito el borde para las imagenes del cover y app-name-link */
+    .cover-main img, .app-name-link img {
+        border: none;
+    }
+
+    /* Establecer el padding para el bloque de código */
+    .markdown-section pre > code {
+        padding: 1em 5px;
+    }
+
+    /* Establecer el tamaño de fuente el body */
+    body {
+        font-size: 18px;
+    }
+
+    /* Establecer un fondo de color pastel claro */
+    .sidebar-nav {
+        background-color: var(--sideBarBackgroundNColor);
+    }
+
+    /* Establecer un estilo para los enlaces hovered del sidebar-nav */
+    .sidebar-nav a:hover {
+        background-color: var(--sideBarHoverBackgroundNColor);
+        color: var(--sideBarHoverTextColor);
+    }
+
+    .sidebar {
+        background-color: var(--navBackgroundNColor);
+    }
+
+    .search {
+        margin-bottom: 0px !important;
+        background-color: var(--sideBarBackgroundNColor);
+    }
+
+
+    .content {
+        padding-top: 0px;
+    }
+
+    .sidebar-logo {
+        padding: 10%;
+    }
+
+
+    section.cover .cover-main > p:last-child a {
+        background: white;
+    }
+
+    .search p.empty {
+        text-align: center;
+        font-size: large;
+    }
+
+    .cover-main img, .app-name-link img {
+        content: var(--cc_logo, url(./assets/logo_emtelco.png));
+    }
+
+    .vanilla-calendar-month_disabled {
+        color:  var(--calendarTitleColor) !important;
+    }
+
+    .vanilla-calendar-year_disabled {
+        color:  var(--calendarTitleColor) !important;
+    }
+    
+    .vanilla-calendar-week__day {
+        color: #00b1e5 !important;
+    }
+
+    .vanilla-calendar {
+        background-color: var(--codeBackgroundColor);
+    }
+
+    .vanilla-calendar-day__btn_disabled {
+        background-color:var(--codeBackgroundColor) !important;
+        color: var(--sideBarHoverTextColor)!important;
+    }
+
+    .calendar-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .calendar-container> .calendar {
+        width: 300px;
+    }
+
+
+
+</style>
+
+<!-- CDN files for docsify-katex -->
+
+<script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
+<script src="//cdn.jsdelivr.net/npm/marked@4"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+<script src="emtelco-calendar.js"></script>
+</body>
+</html>

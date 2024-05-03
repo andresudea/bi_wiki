@@ -1,0 +1,21 @@
+
+- [**Calendario disponibilidad**](otros/calendario_disponibilidad.md)
+- [**Actividades durante disponibilidad**](otros/actividades_disponibilidad.md)
+- [**Entrega disponibilidad**](otros/entrega_disponibilidad.md)
+- [**Evento de falla**](otros/evento_de_falla.md)
+- [**BDUnica Afectaciones**](dbunica/afectaciones.md) 
+- **Documentación Cloud** :cloud:
+  - [**Glosario Cloud**](glosario/glosario_cloud.md) 
+  - [**Plantillas Cloud**](doc_cloud/Plantilllas_Cloud.md)
+  - [**Documento para nuevo proyecto de Cloud**](doc_cloud/nuevo_proyecto_cloud.md)
+  - [**Disponibilidad Cloud**](doc_cloud/disponibilidad_cloud.md)
+  - [**Reprocesos Cloud**](doc_cloud/reprocesos_cloud.md)
+- **Documentación de Engage**
+  - [**Glosario Engage**](glosario/glosario_engage.md) 
+  - [**Disponibilidad Engage**](doc_engage/disponibilidad_engage.md)
+  - [**Reprocesos Engage**](doc_engage/reprocesos_engage.md)
+- **Documentación de Asterisk**
+  - [**Disponibilidad Asterisk**](doc_asterisk/disponibilidad_asterisk.md)
+  - [**Reprocesos Asterisk**](doc_asterisk/reprocesos_asterisk.md)
+- **Documentación de Sireem**
+  - [**Nemotécnico Sireem**](doc_sireem/nemotecnico_sireem.md)
